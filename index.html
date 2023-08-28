@@ -18,12 +18,38 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div class="menu">
+        <div class="range">
+            <div class="sliderValue">
+                <span>50</span>
+            </div>
+            <div class="field">
+                <div class="value left">4</div>
+                <input type="range" min="4" max="100" value="50" steps="1">
+                <div class="value right">100</div>
+            </div>
+        </div>
+
+    </div>
     <div class="container">
     </div>
 </body>
 
 
 <script>
+
+//slider
+const slideValue = document.querySelector("span");
+const inputSlider = document.querySelector("input");
+inputSlider.oninput = (()=>{
+    let value = inputSlider.value;
+    slideValue.textContent = value;
+    slideValue.style.left = (value) + "%";
+});
+
+
+
+
 console.log("check1");
 const container = document.querySelector(".container");
 

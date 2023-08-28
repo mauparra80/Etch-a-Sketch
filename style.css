@@ -1,11 +1,121 @@
 *
 {
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.body
+body
 {
-    
+    background-color: teal;
+    margin: 20px;
+    margin-top: 100px;
+    display: grid;
+    height: 100%;
+    text-align: center;
+    place-items: center;
+
+}
+
+.menu
+{
+    margin: auto;
+    margin-bottom: 20px;
+    background: teal;
+}
+
+.range
+{
+    margin: auto;
+    height: 80px;
+    width: 380px;
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 0 65px 0 45px;
+
+}
+
+.range .sliderValue
+{
+    position: relative;
+    width: 100%;
+}
+
+.range .sliderValue span{
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    color: whitesmoke;
+    font-weight: 500;
+    top: -40px;
+    transform: translateX(-50%);
+    line-height: 55px;
+    z-index: 2;
+    text-align: center;
+}
+
+.range .sliderValue span:after{
+    position: absolute;
+    content: "";
+    height: 45px;
+    width: 45px;
+    background: teal;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border: 3px solid #fff;
+    z-index: -1;
+    border-top-left-radius:50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%
+}
+
+.range .field
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.range .field .value
+{
+    position: absolute;
+    font-size: 25px;
+    font-weight: 600;
+    color: teal;
+}
+
+.range .field .value.left
+{
+    left: -22px;
+}
+
+.range .field .value.right
+{
+    right: -43px;
+}
+
+.range .field input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.range .field input::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: teal;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 96, 96)
 }
 
 .container
@@ -16,12 +126,14 @@
     align-items: stretch;
     height: 1000px;
     width: 1000px;
+    border: 2px solid black;
+    background: whitesmoke;
 }
 
 .box
 {
     flex: 1;
-    padding: 5px;
+    transition: 3s;
 }
 
 .row
@@ -34,5 +146,5 @@
 .box:hover
 {
     background-color: black;
-    transition: 1s;
+    transition: 0s;
 }
