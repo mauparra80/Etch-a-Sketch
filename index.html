@@ -41,31 +41,44 @@
 //slider
 const slideValue = document.querySelector("span");
 const inputSlider = document.querySelector("input");
-inputSlider.oninput = (()=>{
-    let value = inputSlider.value;
+let value = inputSlider.value;
+inputSlider.oninput = (updateSlider);
+
+function updateSlider()
+{
+    value = inputSlider.value;
     slideValue.textContent = value;
     slideValue.style.left = (value) + "%";
+    
+    console.log(value);
+};
+
+
+
+
+//initialize grid
+const container = document.querySelector(".container");
+setupGrid();
+
+//setup listener for slider to respond with setupgrid function.
+inputSlider.addEventListener("click", () =>{
+    setupGrid();
+    console.log("value moved. new value = ", value)
 });
 
 
-
-
-console.log("check1");
-const container = document.querySelector(".container");
-
-setupGrid();
-console.log("check1");
-
 function setupGrid()
 {
-for (i=1; i<17; i++)
+var grid = + value;
+container.replaceChildren();
+
+for (i=1; i<(grid + 1); i++)
 {
     let newRow = document.createElement("div");
     container.appendChild(newRow);
-    console.log(i);
     newRow.classList.add("row");
 
-    for (j=1; j<17; j++)
+    for (j=1; j<(grid + 1); j++)
     {
         let newColumn = document.createElement("div");
         newRow.appendChild(newColumn);
