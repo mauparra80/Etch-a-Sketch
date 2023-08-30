@@ -39,6 +39,11 @@ button
     border-radius: 10px;
 }
 
+button:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 188, 132);
+}
+
 .title
 {
     font-family: 'Concert One', cursive;
@@ -162,7 +167,7 @@ button
 .box
 {
     flex: 1;
-    transition: 3s;
+    transition: .5s;
     border: 1px dotted rgb(209, 209, 209);
 }
 
@@ -173,8 +178,14 @@ button
     flex-direction: column;
 }
 
-.box:hover
+/* .box:hover
 {
     background-color: black;
     transition: 0s;
+} */
+
+.black
+{
+    background-color: black;
 }
+

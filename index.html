@@ -16,7 +16,7 @@
 <body>
     <div class="title">Etch-a-Sketch</div>
     <div class="menu">
-        <button id="reset">Reset</button>
+        <button onclick="clearGrid()" id="clear">Clear</button>
         <div class="range">
             <div class="sliderValue">
                 <span>50</span>
@@ -63,6 +63,9 @@ setupGrid();
 
 //setup listener for slider to respond with setupgrid function.
 inputSlider.addEventListener("click", () =>{
+
+    
+    clearGrid();
     setupGrid();
     console.log("value moved. new value = ", value)
 });
@@ -87,7 +90,35 @@ for (i=1; i<(grid + 1); i++)
     }
 
 }
+
+let box = document.querySelectorAll(".box");
+    box.forEach(box => {
+    box.addEventListener("mouseover", addShade);
+    });
 }
+
+//add black grid function
+ let box = document.querySelectorAll(".box");
+ box.forEach(box => {
+ box.addEventListener("mouseover", addShade);
+ });
+
+
+ function addShade(e)
+ {
+    console.log("mousedover");
+    e.target.classList.add("black")
+ }
+
+
+ //clear the grid
+ function clearGrid()
+ {
+    let box = document.querySelectorAll(".box");
+    box.forEach(box => {
+    box.classList.remove("black")
+    });
+ }
 
 </script>
 
