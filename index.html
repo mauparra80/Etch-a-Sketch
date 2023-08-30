@@ -4,11 +4,7 @@
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"  rel="stylesheet">
 
 
     <meta charset="UTF-8">
@@ -18,17 +14,22 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div class="title">Etch-a-Sketch</div>
     <div class="menu">
+        <button id="reset">Reset</button>
         <div class="range">
             <div class="sliderValue">
                 <span>50</span>
             </div>
             <div class="field">
-                <div class="value left">4</div>
-                <input type="range" min="4" max="100" value="50" steps="1">
+                <div class="value left">1</div>
+                <input type="range" min="1" max="100" value="50" steps="1">
                 <div class="value right">100</div>
             </div>
+            <div class="sliderKey">Pixels</div>
         </div>
+        <button id="rainbow">Rainbow</button>
+        <button id="black">Black</button>
 
     </div>
     <div class="container">
