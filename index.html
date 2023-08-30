@@ -28,8 +28,8 @@
             </div>
             <div class="sliderKey">Pixels</div>
         </div>
-        <button id="rainbow">Rainbow</button>
-        <button id="black">Black</button>
+        <button onclick="setRainbow()" id="rainbow">Rainbow</button>
+        <button onclick="setBlack()" id="black" class="clicked">Black</button>
 
     </div>
     <div class="container">
@@ -38,6 +38,25 @@
 
 
 <script>
+
+//setup
+let color = "black";
+
+const rainbow = document.querySelector("#rainbow");
+const black = document.querySelector("#black");
+
+rainbow.addEventListener('click',select);
+black.addEventListener('click',select);
+
+
+//button toggle between rainbow and black
+function select(e)
+{
+    rainbow.classList.remove("clicked");
+    black.classList.remove("clicked");
+    e.target.classList.add("clicked");
+}
+
 
 //slider
 const slideValue = document.querySelector("span");
@@ -97,7 +116,20 @@ let box = document.querySelectorAll(".box");
     });
 }
 
-//add black grid function
+
+//setting shading to black/rainbow
+function setBlack()
+{
+    color = "black";
+}
+
+function setRainbow()
+{
+    color = "rainbow";
+}
+
+
+//add shading grid function
  let box = document.querySelectorAll(".box");
  box.forEach(box => {
  box.addEventListener("mouseover", addShade);
@@ -107,7 +139,17 @@ let box = document.querySelectorAll(".box");
  function addShade(e)
  {
     console.log("mousedover");
-    e.target.classList.add("black")
+
+    if (color === "black")
+    {
+        e.target.style.backgroundColor = 'black';
+    }
+    else if (color === "rainbow")
+    {
+        // e.target.classList.add("rainbow");
+        let color = random_rgba();
+        e.target.style.backgroundColor = color;
+    }
  }
 
 
@@ -116,8 +158,15 @@ let box = document.querySelectorAll(".box");
  {
     let box = document.querySelectorAll(".box");
     box.forEach(box => {
-    box.classList.remove("black")
+    box.style.backgroundColor = "white"
     });
+ }
+
+ //helper functions
+ function random_rgba()
+ {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
  }
 
 </script>
